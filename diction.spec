@@ -1,7 +1,8 @@
-Summary:	analyze text for style
+Summary:	Analyze text for style
+Summary(pl):	Narzêdzie analizuj±ce tekst pod k±tem stylu
 Name:		diction
 Version:	1.02
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/Text
 Source0:	http://www.moria.de/~michael/diction/%{name}-%{version}.tar.gz
@@ -56,6 +57,12 @@ install diction*.info $RPM_BUILD_ROOT%{_infodir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%post
+[ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir %{_infodir} >/dev/null 2>&1
+
+%postun
+[ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir %{_infodir} >/dev/null 2>&1
 
 %files
 %defattr(644,root,root,755)
