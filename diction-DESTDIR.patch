@@ -1,35 +1,36 @@
---- diction-1.02/Makefile.in	Mon Aug  6 19:09:54 2001
-+++ diction-1.02-/Makefile.in	Tue Aug 27 18:21:37 2002
-@@ -28,20 +28,20 @@
+diff -urN diction-1.03.orig/Makefile.in diction-1.03/Makefile.in
+--- diction-1.03.orig/Makefile.in	2003-04-08 23:28:58.000000000 +0200
++++ diction-1.03/Makefile.in	2003-08-09 20:20:38.000000000 +0200
+@@ -35,21 +35,21 @@
  		getopt.o getopt1.o $(LIBM) $(LIBS)
  
  install:	all
--		@INSTALL@ -m 755 -d @bindir@
+-		[ -d @bindir@ ] || @INSTALL@ -m 755 -d @bindir@
 -		@INSTALL@ diction @bindir@/diction
 -		@INSTALL@ style @bindir@/style
 -		@INSTALL@ -m 755 -d @datadir@/diction
 -		@INSTALL@ -m 644 de @datadir@/diction/de
 -		@INSTALL@ -m 644 en @datadir@/diction/en
 -		(cd @datadir@/diction; rm -f C; ln en C)
--		@INSTALL@ -m 755 -d @mandir@/man1
+-		[ -d @mandir@/man1 ] || @INSTALL@ -m 755 -d @mandir@/man1
 -		@INSTALL@ -m 644 diction.1 @mandir@/man1/diction.1
 -		@INSTALL@ -m 644 style.1 @mandir@/man1/style.1
-+		@INSTALL@ -m 755 -d $(DESTDIR)@bindir@
++		[ -d $(DESTDIR)@bindir@ ] || @INSTALL@ -m 755 -d $(DESTDIR)@bindir@
 +		@INSTALL@ diction $(DESTDIR)@bindir@/diction
 +		@INSTALL@ style $(DESTDIR)@bindir@/style
 +		@INSTALL@ -m 755 -d $(DESTDIR)@datadir@/diction
 +		@INSTALL@ -m 644 de $(DESTDIR)@datadir@/diction/de
 +		@INSTALL@ -m 644 en $(DESTDIR)@datadir@/diction/en
-+		(cd $(DESTDIR)@datadir@/diction; rm -f C; ln -s en C)
-+		@INSTALL@ -m 755 -d $(DESTDIR)@mandir@/man1
++		(cd $(DESTDIR)@datadir@/diction; rm -f C; ln en C)
++		[ -d $(DESTDIR)@mandir@/man1 ] || @INSTALL@ -m 755 -d $(DESTDIR)@mandir@/man1
 +		@INSTALL@ -m 644 diction.1 $(DESTDIR)@mandir@/man1/diction.1
 +		@INSTALL@ -m 644 style.1 $(DESTDIR)@mandir@/man1/style.1
- 
- install.msg:
--		gencat -o @datadir@/locale/en_US/LC_MESSAGES/diction.cat diction-en.msg sent-en.msg
--		gencat -o @datadir@/locale/en_US/LC_MESSAGES/style.cat style-en.msg sent-en.msg
-+		gencat -o $(DESTDIR)@datadir@/locale/en_US/LC_MESSAGES/diction.cat diction-en.msg sent-en.msg
-+		gencat -o $(DESTDIR)@datadir@/locale/en_US/LC_MESSAGES/style.cat style-en.msg sent-en.msg
- 
- .c.o:
- 		$(CC) -c $(CPPFLAGS) $(CFLAGS) $<
+ 		make install-po-@USE_NLS@
+ install-po-no:
+ install-po-yes:	$(CATALOGS)
+ 		for cat in $(CATALOGS); do \
+-		  dir=$(localedir)/`basename $$cat .mo`/LC_MESSAGES; \
++		  dir=$(DESTDIR)$(localedir)/`basename $$cat .mo`/LC_MESSAGES; \
+ 		  [ -d $$dir ] || @INSTALL@ -m 755 -d $$dir; \
+ 		  @INSTALL@ -m 644 $$cat $$dir/diction.mo; \
+ 		done
