@@ -43,7 +43,7 @@ Obie komendy wspieraj± jêzyki angielski i niemiecki.
 %patch1 -p1
 
 %build
-autoconf
+%{__autoconf}
 cp -f %{_datadir}/automake/{config.,missing}* .
 %configure
 %{__make}
@@ -73,4 +73,4 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/%{name}
 %{_mandir}/man?/*
-%{_infodir}/*
+%{_infodir}/*.info*
