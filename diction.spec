@@ -1,12 +1,12 @@
 Summary:	Analyze text for style
 Summary(pl):	Narzêdzie analizuj±ce tekst pod k±tem stylu
 Name:		diction
-Version:	1.02
-Release:	2
+Version:	1.03
+Release:	1
 License:	GPL
 Group:		Applications/Text
 Source0:	http://www.moria.de/~michael/diction/%{name}-%{version}.tar.gz
-# Source0-md5:	e50fd9139d47b1f146b1342293825f19
+# Source0-md5:	483a6f3bf0b17045d65a6973587e9ea8
 Patch0:		%{name}-DESTDIR.patch
 Patch1:		%{name}-texi.patch
 URL:		http://www.moria.de/~michael/diction/
@@ -72,5 +72,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc README
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/%{name}
+%lang(de) %{_datadir}/locale/de/LC_MESSAGES/*
 %{_mandir}/man?/*
 %{_infodir}/*.info*
