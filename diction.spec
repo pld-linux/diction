@@ -6,6 +6,7 @@ Release:	2
 License:	GPL
 Group:		Applications/Text
 Source0:	http://www.moria.de/~michael/diction/%{name}-%{version}.tar.gz
+# Source0-md5:	e50fd9139d47b1f146b1342293825f19
 Patch0:		%{name}-DESTDIR.patch
 Patch1:		%{name}-texi.patch
 URL:		http://www.moria.de/~michael/diction/
