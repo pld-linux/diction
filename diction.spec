@@ -44,7 +44,7 @@ Obie komendy wspieraj± jêzyki angielski i niemiecki.
 
 %build
 %{__autoconf}
-cp -f %{_datadir}/automake/{config.,missing}* .
+cp -f %{_datadir}/automake/{config.*,missing} .
 %configure
 %{__make}
 makeinfo diction.texi
@@ -58,6 +58,8 @@ install -d $RPM_BUILD_ROOT%{_infodir}
 
 install diction*.info $RPM_BUILD_ROOT%{_infodir}
 
+%find_lang %{name}
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -67,11 +69,10 @@ rm -rf $RPM_BUILD_ROOT
 %postun
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir %{_infodir} >/dev/null 2>&1
 
-%files
+%files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc README
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/%{name}
-%lang(de) %{_datadir}/locale/de/LC_MESSAGES/*
 %{_mandir}/man?/*
 %{_infodir}/*.info*
