@@ -1,0 +1,23 @@
+--- diction-1.02/diction.texi.in	Mon Aug  6 19:09:54 2001
++++ diction-1.02-/diction.texi.in	Tue Aug 27 18:25:55 2002
+@@ -87,6 +87,7 @@
+ * Introduction::                Introduction.
+ * Invoking::                    Invoking @command{diction}; description of options.
+ * Diagnostics::                 Exit status returned by @command{diction}.
++* Author::			Who wrote diction?
+ * Reporting Bugs::              Reporting Bugs.
+ * Concept Index::               A menu with all the topics in this manual.
+ * Index::                       A menu with all @command{diction} commands
+@@ -226,10 +227,10 @@
+ @chapter Author
+ 
+ This program is GNU software, copyright 1997, 1998, 1999, 2000 Michael Haardt
+-<michael@moria.de>.
++<michael@@moria.de>.
+ 
+ The english phrase file contains contributions by Greg Lindahl
+-<lindahl@pbm.com>, Wil Baden, Gary D. Kline, Kimberly Hanks and
++<lindahl@@pbm.com>, Wil Baden, Gary D. Kline, Kimberly Hanks and
+ Beth Morris.
+ 
+ This program is free software; you can redistribute it and/or modify
