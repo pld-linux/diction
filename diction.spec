@@ -29,7 +29,7 @@ Both commands support English and German documents.
 GNU diction oraz style s± otwartymi implementacjami starych,
 standardowych komend uniksowych, które nie s± dostêpne na wielu
 nowoczesnych systemach. Diction wypisuje czêste pomy³ki s³owne i ¼le
-u¿yte wyra¿enia. Style analizuje powierzchniowe charakterystki
+u¿yte wyra¿enia. Style analizuje powierzchniowe charakterystyki
 dokumentu, np. d³ugo¶æ zdañ oraz ró¿ne wska¼niki czytelno¶ci, jednak w
 przeciwieñstwie do oryginalnej wersji nie przeprowadza analizy typu
 zdañ, u¿ycia s³ów oraz pocz±tków zdañ.
