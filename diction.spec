@@ -31,7 +31,7 @@ nowoczesnych systemach. Diction wypisuje czêste pomy³ki s³owne i ¼le
 u¿yte wyra¿enia. Style analizuje powierzchniowe charakterystki
 dokumentu, np. d³ugo¶æ zdañ oraz ró¿ne wska¼niki czytelno¶ci, jednak w
 przeciwieñstwie do oryginalnej wersji nie przeprowadza analizy typu
-zdañ, u¿ycia s³ów oraz pocz±tkó³ zdañ.
+zdañ, u¿ycia s³ów oraz pocz±tków zdañ.
 
 Obie komendy wspieraj± jêzyki angielski i niemiecki.
 
