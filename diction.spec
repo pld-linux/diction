@@ -51,9 +51,11 @@ makeinfo diction.texi
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
-%{__make} DESTDIR=$RPM_BUILD_ROOT install
 install -d $RPM_BUILD_ROOT%{_infodir}
+
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
+
 install diction*.info $RPM_BUILD_ROOT%{_infodir}
 
 %clean
