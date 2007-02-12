@@ -1,5 +1,5 @@
 Summary:	Analyze text for style
-Summary(pl.UTF-8):   Narzędzie analizujące tekst pod kątem stylu
+Summary(pl.UTF-8):	Narzędzie analizujące tekst pod kątem stylu
 Name:		diction
 Version:	1.09
 Release:	1
