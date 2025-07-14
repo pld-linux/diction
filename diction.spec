@@ -39,7 +39,7 @@ Obie komendy wspierają języki angielski i niemiecki.
 
 %prep
 %setup -q
-%patch1 -p1
+%patch -P1 -p1
 
 %build
 %{__autoconf}
